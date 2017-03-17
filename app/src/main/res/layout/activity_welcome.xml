@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ImageView
+        android:id="@+id/iv_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/image_geshi"
+        android:background="@mipmap/loading_icon"
+        android:layout_centerInParent="true" />
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="www.yunifang.com"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="46dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="湖南御泥坊化妆品有限公司"
+        android:layout_marginTop="21dp"
+        android:id="@+id/tv2"
+        android:layout_alignTop="@id/tv1"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

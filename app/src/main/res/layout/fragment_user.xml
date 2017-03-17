@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="个人中心"
+            style="@style/TextForm"
+            />
+
+
+        <ImageButton
+            android:id="@+id/ib_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bt_settings"
+            style="@style/IbDistanceRight"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_user"
+        android:layout_width="match_parent"
+        android:layout_height="138dp"
+        android:background="@drawable/user_info_bg">
+
+        <ImageView
+            android:id="@+id/iv_user_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/user_icon_default"
+            android:layout_marginLeft="16dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="16dp" />
+
+        <TextView
+            android:id="@+id/tv_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_user_default"
+            android:layout_marginLeft="15dp"
+            android:text="点击登录"
+            android:textSize="20sp"
+            android:textColor="#f5f5f5"
+            />
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/iv_user_tiaofu"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/user_tiaofu"
+        />
+</LinearLayout>
