@@ -9,14 +9,16 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:background="#fa8072">
+        android:background="#fa8072"
+        >
 
         <TextView
             style="@style/TextForm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="御泥坊VIP商城"
-            android:textColor="#ffffff" />
+            android:textColor="#ffffff"
+            />
     </RelativeLayout>
 
     <com.handmark.pulltorefresh.library.PullToRefreshScrollView
@@ -33,17 +35,139 @@
             <com.youth.banner.Banner
                 android:id="@+id/banner"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                app:indicator_drawable_selected="@color/yuandian" />
+                android:layout_height="170dp"
+                app:indicator_drawable_selected="@color/yuandian"
+                />
+
             <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="95dp"
+                android:orientation="horizontal"
+                android:background="#ffffff"
                 >
+                <RelativeLayout
+                    android:id="@+id/r1"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    >
+                    <ImageView
+                        android:id="@+id/iv_meiri"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:scaleType="fitXY"
+                        android:layout_centerHorizontal="true"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="每日签到"
+                        android:layout_below="@id/iv_meiri"
+                        android:layout_centerHorizontal="true"
+                        />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/r2"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    >
+                    <ImageView
+                        android:id="@+id/iv_jifen"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:scaleType="fitXY"
+                        android:layout_centerHorizontal="true"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="积分商城"
+                        android:layout_below="@id/iv_jifen"
+                        android:layout_centerHorizontal="true"
+                        />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/r3"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    >
+                    <ImageView
+                        android:id="@+id/iv_duihuan"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:scaleType="fitXY"
+                        android:layout_centerHorizontal="true"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="兑换专区"
+                        android:layout_below="@id/iv_duihuan"
+                        android:layout_centerHorizontal="true"
+                        />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/r4"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_zhenwei"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:scaleType="fitXY"
+                        android:layout_centerHorizontal="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="真伪查询"
+                        android:layout_below="@id/iv_zhenwei"
+                        android:layout_centerHorizontal="true"
+                        />
+
+
+                </RelativeLayout>
 
             </LinearLayout>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="— 优惠活动 —"
+                android:gravity="center_horizontal"
+                android:background="#f1f1f1"
+                android:id="@+id/textView" />
+
+            <ImageView
+                android:id="@+id/iv_youhui"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:scaleType="fitXY"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="≈ 本周热销 ≈"
+                android:gravity="center_horizontal"
+                android:background="#f1f1f1"
+                />
+            <ImageView
+                android:id="@+id/iv_re"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:scaleType="fitXY"
+                />
         </LinearLayout>
+
     </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
 
 

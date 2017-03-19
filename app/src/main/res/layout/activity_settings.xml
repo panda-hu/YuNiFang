@@ -21,4 +21,16 @@
             android:text="设置"
             style="@style/TextForm"/>
     </RelativeLayout>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        />
+    <Button
+        android:id="@+id/bt_out"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:text="退出登录"
+        android:layout_gravity="center_horizontal"
+        android:background="#ff8888"
+        />
 </LinearLayout>

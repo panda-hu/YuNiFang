@@ -2,6 +2,7 @@ package com.bwei.test;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,7 +20,10 @@ import com.tencent.tauth.UiError;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import bean.QQbean;
 import fragment.FragmentUser;
+import interFace.Qback;
+import utils.PreferenceUtils;
 
 /**
  * 姓名:胡文帅
@@ -39,6 +43,9 @@ public class LoginActivity extends Activity implements View.OnClickListener{
     private TextView tv_register;
     private ImageButton ib_login_back;
     private ImageButton ib_login_qq;
+
+    private String nickname;
+    private String figureurl_qq_2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,13 +113,10 @@ public class LoginActivity extends Activity implements View.OnClickListener{
                     public void onComplete(Object response) {
                         Log.e(TAG,"登录成功"+response.toString());
                         JSONObject jsonObject= (JSONObject) response;
-                        String nickname = jsonObject.optString("nickname");
-                        String figureurl_qq_2 = jsonObject.optString("figureurl_qq_2");
-                        FragmentUser fu=new FragmentUser();
-                        Bundle bundle=new Bundle();
-                        bundle.putString("nickname",nickname);
-                        bundle.putString("figureurl_qq_2",figureurl_qq_2);
-                        fu.setArguments(bundle);
+                        nickname = jsonObject.optString("nickname");
+                        figureurl_qq_2 = jsonObject.optString("figureurl_qq_2");
+                        PreferenceUtils.setString(LoginActivity.this,"nickname",nickname);
+                        PreferenceUtils.setString(LoginActivity.this,"figureurl_qq_2",figureurl_qq_2);
                         finish();
                     }
 
@@ -155,6 +159,7 @@ public class LoginActivity extends Activity implements View.OnClickListener{
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
+
 
 
 }
