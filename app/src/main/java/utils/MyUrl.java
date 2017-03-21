@@ -9,5 +9,6 @@ package utils;
 
 public class MyUrl {
 
-    public static String url="";
+    //首页
+    public static String url_home="http://m.yunifang.com/yunifang/mobile/home?random=84831&encode=9dd34239798e8cb22bf99a75d1882447";
 }

@@ -2,6 +2,8 @@ package fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -21,7 +23,11 @@ import com.youth.banner.BannerConfig;
 import java.util.ArrayList;
 import java.util.List;
 
+import bean.HomeBean;
+import interFace.YuNiFangData;
 import utils.GlideImageLoader;
+import utils.MyUrl;
+import utils.NetWorkUtils;
 import utils.TestNet;
 
 /**
@@ -31,10 +37,10 @@ import utils.TestNet;
  * 备注：主页
  */
 
-public class FragmentHome extends Fragment implements View.OnClickListener{
+public class FragmentHome extends Fragment implements View.OnClickListener, YuNiFangData<HomeBean>{
 
     private View view;
-    private List<String> list;
+    private List<String> list_lunbo_image;
     private Banner banner;
     private PullToRefreshScrollView ptr_scrollview;
     private RelativeLayout r1;
@@ -45,7 +51,15 @@ public class FragmentHome extends Fragment implements View.OnClickListener{
     private ImageView iv_jifen;
     private ImageView iv_duihuan;
     private ImageView iv_zhenwei;
-    private ImageView iv_youhui;
+
+    Handler handler=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+        }
+    };
+    private Banner banner_huodong;
+    private List<String> list_huodong;
 
     @Nullable
     @Override
@@ -58,12 +72,15 @@ public class FragmentHome extends Fragment implements View.OnClickListener{
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         initView();
-        /*ptr_scrollview.getLoadingLayoutProxy().setLastUpdatedLabel("时间:");
-        ptr_scrollview.getLoadingLayoutProxy().setPullLabel("下拉刷新");
-        ptr_scrollview.getLoadingLayoutProxy().setReleaseLabel("松开加载");
-        ptr_scrollview.setMode(PullToRefreshBase.Mode.PULL_FROM_START);*/
+        list_lunbo_image = new ArrayList<>();
+        list_huodong = new ArrayList<>();
+        ptr_scrollview.getLoadingLayoutProxy().setPullLabel("下拉刷新...");
+        ptr_scrollview.getLoadingLayoutProxy().setReleaseLabel("松开加载...");
+        //只支持下拉
+        ptr_scrollview.setMode(PullToRefreshBase.Mode.PULL_FROM_START);
+        NetWorkUtils.getStr(MyUrl.url_home,HomeBean.class,this);
         initData();
-        initBanner();
+
 
     }
 
@@ -73,32 +90,28 @@ public class FragmentHome extends Fragment implements View.OnClickListener{
         //设置指示器位置（当banner模式中有指示器时）
         banner.setIndicatorGravity(BannerConfig.RIGHT);
         //设置图片集合
-        banner.setImages(list);
+        banner.setImages(list_lunbo_image);
         //banner设置方法全部调用完毕时最后调用
         banner.start();
+
+        banner_huodong.setImageLoader(new GlideImageLoader());
+        banner_huodong.setBannerStyle(BannerConfig.NUM_INDICATOR);
+        banner_huodong.isAutoPlay(false);
+        banner_huodong.setImages(list_huodong);
+        banner_huodong.start();
     }
 
     private void initData() {
-        list = new ArrayList<>();
-        list.add("https://image.yunifang.com/yunifang/images/goods/ad0/17031517406303974036478057.jpg");
-        list.add("https://image.yunifang.com/yunifang/images/goods/ad0/1703151603387814865615044.jpg");
-        list.add("https://image.yunifang.com/yunifang/images/goods/ad0/1701190959809077048917947.jpg");
-        list.add("https://image.yunifang.com/yunifang/images/goods/ad0/170301165920612393251158072.jpg");
-        list.add("http://image.hmeili.com/yunifang/images/goods/ad0/170111173213619823650768274.jpg");
-        list.add("http://image.hmeili.com/yunifang/images/goods/ad0/16122110567474029873241894.jpg");
-        list.add("http://image.hmeili.com/yunifang/images/goods/ad0/16101517113385857065462262.jpg");
-        list.add("http://image.hmeili.com/yunifang/images/goods/ad0/16090611503412651428962103.jpg");
-        list.add("https://image.yunifang.com/yunifang/images/goods/ad0/17030317572876071477102023.jpg");
         Glide.with(getActivity()).load("http://image.hmeili.com/yunifang/images/goods/ad0/160823172997710201253418883.png").into(iv_meiri);
         Glide.with(getActivity()).load("http://image.hmeili.com/yunifang/images/goods/ad0/160623120383916524110935835.png").into(iv_jifen);
         Glide.with(getActivity()).load("http://image.hmeili.com/yunifang/images/goods/ad0/160623120326416505640517284.png").into(iv_duihuan);
         Glide.with(getActivity()).load("http://image.hmeili.com/yunifang/images/goods/ad0/160623120430916487170096321.png").into(iv_zhenwei);
-        Glide.with(getActivity()).load("http://image.hmeili.com/yunifang/images/lottery/142/lottery_img/1607022220068457990753273.png").into(iv_youhui);
     }
 
     private void initView() {
-        //ptr_scrollview = (PullToRefreshScrollView) view.findViewById(R.id.ptr_scrollview);
+        ptr_scrollview = (PullToRefreshScrollView) view.findViewById(R.id.ptr_scrollview);
         banner = (Banner) view.findViewById(R.id.banner);
+        banner_huodong = (Banner) view.findViewById(R.id.banner_huodong);
         r1 = (RelativeLayout) view.findViewById(R.id.r1);
         r2 = (RelativeLayout) view.findViewById(R.id.r2);
         r3 = (RelativeLayout) view.findViewById(R.id.r3);
@@ -107,7 +120,6 @@ public class FragmentHome extends Fragment implements View.OnClickListener{
         iv_jifen = (ImageView) view.findViewById(R.id.iv_jifen);
         iv_duihuan = (ImageView) view.findViewById(R.id.iv_duihuan);
         iv_zhenwei = (ImageView) view.findViewById(R.id.iv_zhenwei);
-        iv_youhui = (ImageView) view.findViewById(R.id.iv_youhui);
         iv_meiri.setOnClickListener(this);
         iv_jifen.setOnClickListener(this);
         iv_duihuan.setOnClickListener(this);
@@ -137,5 +149,20 @@ public class FragmentHome extends Fragment implements View.OnClickListener{
         Intent intent=new Intent(getActivity(), WebViewActivity.class);
         intent.putExtra("url",url);
         startActivity(intent);
+    }
+
+    @Override
+    public void ynfdataSuccer(HomeBean mt) {
+        //轮播图的集合
+        List<HomeBean.Ad1> ad1 = mt.data.ad1;
+        for (int i = 0; i <ad1.size() ; i++) {
+            list_lunbo_image.add(ad1.get(i).image);
+        }
+        //活动图的集合
+        List<HomeBean.ActivityInfo.ActivityInfoList> activityInfoList = mt.data.activityInfo.activityInfoList;
+        for (int i = 0; i <activityInfoList.size() ; i++) {
+            list_huodong.add(activityInfoList.get(i).activityImg);
+        }
+        initBanner();
     }
 }

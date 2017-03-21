@@ -146,11 +146,10 @@
                 android:background="#f1f1f1"
                 android:id="@+id/textView" />
 
-            <ImageView
-                android:id="@+id/iv_youhui"
+            <com.youth.banner.Banner
+                android:id="@+id/banner_huodong"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:scaleType="fitXY"
                 />
 
             <TextView
@@ -160,15 +159,24 @@
                 android:gravity="center_horizontal"
                 android:background="#f1f1f1"
                 />
-            <ImageView
-                android:id="@+id/iv_re"
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerview1"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:scaleType="fitXY"
+                />
+
+            <TextView
+                android:id="@+id/all_shangpin"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:text="查看所有商品"
+                android:gravity="center"
                 />
         </LinearLayout>
 
     </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
+
 
 
 </LinearLayout>

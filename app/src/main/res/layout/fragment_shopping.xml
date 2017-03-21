@@ -45,5 +45,48 @@
             android:text="快去逛逛吧～"/>
 
     </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="#f8f8f8">
+        <!-- 全选的布局 -->
+        <CheckBox
+            android:id="@+id/bt_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            style="@style/CustomCheckboxTheme"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全选"
+            android:layout_marginLeft="15dp"/>
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <!-- 合计的布局 -->
+        <TextView
+            android:id="@+id/money_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:paddingRight="10dp"
+            android:textColor="#F63A19"
+            android:text="合计:￥0.00"/>
+        <!-- 去结算的布局 -->
+        <Button
+            android:id="@+id/suan_button"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="结算"
+            />
+    </LinearLayout>
 
 </LinearLayout>

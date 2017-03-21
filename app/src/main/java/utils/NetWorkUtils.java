@@ -1,5 +1,15 @@
 package utils;
 
+import android.util.Log;
+
+import com.google.gson.Gson;
+
+import org.xutils.common.Callback;
+import org.xutils.http.RequestParams;
+import org.xutils.x;
+
+import interFace.YuNiFangData;
+
 /**
  * 姓名:胡文帅
  * 时间:2017/3/19
@@ -9,13 +19,35 @@ package utils;
 
 public class NetWorkUtils {
 
-    public static String getStr(String url){
+    public static <T>void getStr(String url, final Class<T> mclass, final YuNiFangData yunifangdata){
+        x.http().get(new RequestParams(url), new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                Log.e("re",result);
+                Gson gson=new Gson();
+                T t = gson.fromJson(result, mclass);
+                yunifangdata.ynfdataSuccer(t);
+            }
 
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
 
-        return null;
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
     }
 
-    public interface ReturnContent{
-        void returnContent(String str);
-    }
+
+
+
+
 }

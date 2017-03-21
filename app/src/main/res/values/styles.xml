@@ -39,4 +39,8 @@
         <item name="android:layout_centerInParent">true</item>
         <item name="android:textSize">20sp</item>
     </style>
+    
+    <style name="CustomCheckboxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/check</item>
+    </style>
 </resources>
