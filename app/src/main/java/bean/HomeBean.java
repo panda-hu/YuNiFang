@@ -41,7 +41,7 @@ public class HomeBean {
             public String goods_img;
             public String goods_name;
             public String shop_price;
-            public String arket_price;
+            public String market_price;
         }
     }
 }

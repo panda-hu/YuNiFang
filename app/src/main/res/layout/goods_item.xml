@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
+    android:layout_width="150dp"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="10dp">
+
     <ImageView
         android:id="@+id/item_goods_image"
         android:layout_width="150dp"
@@ -13,8 +14,9 @@
         android:id="@+id/item_goods_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="镇店之宝|美白嫩肤矿物\n蚕丝面膜7片"
-        android:textColor="#848181" />
+        android:text="--------------------------------"
+        android:textColor="#848181"
+        android:textSize="10sp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -24,7 +26,7 @@
             android:id="@+id/item_goods_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="¥ 39.90"
+            android:text="¥ 00.00"
             android:textColor="#EA2000" />
 
         <TextView
@@ -32,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:text="¥ 39.90"
+            android:text="¥ 00.00"
             android:textColor="#848181" />
     </RelativeLayout>
 

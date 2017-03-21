@@ -6,6 +6,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +25,7 @@ import com.youth.banner.BannerConfig;
 import java.util.ArrayList;
 import java.util.List;
 
+import adapter.recycler.RvAdapter;
 import bean.HomeBean;
 import interFace.YuNiFangData;
 import utils.GlideImageLoader;
@@ -37,29 +40,57 @@ import utils.TestNet;
  * 备注：主页
  */
 
-public class FragmentHome extends Fragment implements View.OnClickListener, YuNiFangData<HomeBean>{
+public class FragmentHome extends Fragment implements View.OnClickListener, YuNiFangData<HomeBean> {
 
     private View view;
     private List<String> list_lunbo_image;
     private Banner banner;
     private PullToRefreshScrollView ptr_scrollview;
-    private RelativeLayout r1;
-    private RelativeLayout r2;
-    private RelativeLayout r3;
-    private RelativeLayout r4;
+    private RelativeLayout r11;
+    private RelativeLayout r22;
+    private RelativeLayout r33;
+    private RelativeLayout r44;
     private ImageView iv_meiri;
     private ImageView iv_jifen;
     private ImageView iv_duihuan;
     private ImageView iv_zhenwei;
+    private Banner banner_huodong;
+    private List<String> list_huodong;
+    private RecyclerView recyclerview;
 
-    Handler handler=new Handler(){
+    Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
+            if (msg.what == 0) {
+                //得到bean
+                HomeBean homebean = (HomeBean) msg.obj;
+                //得到数据
+                List<HomeBean.Ad1> ad1 = homebean.data.ad1;
+                for (int i = 0; i < ad1.size(); i++) {
+                    list_lunbo_image.add(ad1.get(i).image);
+                }
+                //调用方法
+                initBanner();
+            } else if (msg.what == 1) {
+                HomeBean homebean = (HomeBean) msg.obj;
+                List<HomeBean.ActivityInfo.ActivityInfoList> activityInfoList = homebean.data.activityInfo.activityInfoList;
+                for (int i = 0; i < activityInfoList.size(); i++) {
+                    list_huodong.add(activityInfoList.get(i).activityImg);
+                }
+                initBanner1();
+            }else if(msg.what==2){
+                HomeBean homebean = (HomeBean) msg.obj;
+                recyclerview.setLayoutManager(new LinearLayoutManager(getActivity(),RecyclerView.HORIZONTAL,false));
+                List<HomeBean.BestSellers> bestSellers = homebean.data.bestSellers;
+                //得到数据
+                List<HomeBean.BestSellers.GoodsList> goodsList = bestSellers.get(0).goodsList;
+                RvAdapter rvadapter=new RvAdapter(getActivity(),goodsList);
+                recyclerview.setAdapter(rvadapter);
+            }
+
         }
     };
-    private Banner banner_huodong;
-    private List<String> list_huodong;
 
     @Nullable
     @Override
@@ -78,12 +109,12 @@ public class FragmentHome extends Fragment implements View.OnClickListener, YuNi
         ptr_scrollview.getLoadingLayoutProxy().setReleaseLabel("松开加载...");
         //只支持下拉
         ptr_scrollview.setMode(PullToRefreshBase.Mode.PULL_FROM_START);
-        NetWorkUtils.getStr(MyUrl.url_home,HomeBean.class,this);
+        //请求数据
+        NetWorkUtils.getStr(MyUrl.url_home, HomeBean.class, this);
         initData();
-
-
     }
 
+    //轮播第三方实例化方法
     private void initBanner() {
         //设置图片加载器
         banner.setImageLoader(new GlideImageLoader());
@@ -93,7 +124,9 @@ public class FragmentHome extends Fragment implements View.OnClickListener, YuNi
         banner.setImages(list_lunbo_image);
         //banner设置方法全部调用完毕时最后调用
         banner.start();
+    }
 
+    private void initBanner1() {
         banner_huodong.setImageLoader(new GlideImageLoader());
         banner_huodong.setBannerStyle(BannerConfig.NUM_INDICATOR);
         banner_huodong.isAutoPlay(false);
@@ -112,23 +145,24 @@ public class FragmentHome extends Fragment implements View.OnClickListener, YuNi
         ptr_scrollview = (PullToRefreshScrollView) view.findViewById(R.id.ptr_scrollview);
         banner = (Banner) view.findViewById(R.id.banner);
         banner_huodong = (Banner) view.findViewById(R.id.banner_huodong);
-        r1 = (RelativeLayout) view.findViewById(R.id.r1);
-        r2 = (RelativeLayout) view.findViewById(R.id.r2);
-        r3 = (RelativeLayout) view.findViewById(R.id.r3);
-        r4 = (RelativeLayout) view.findViewById(R.id.r4);
+        r11 = (RelativeLayout) view.findViewById(R.id.r1);
+        r22 = (RelativeLayout) view.findViewById(R.id.r2);
+        r33 = (RelativeLayout) view.findViewById(R.id.r3);
+        r44 = (RelativeLayout) view.findViewById(R.id.r4);
         iv_meiri = (ImageView) view.findViewById(R.id.iv_meiri);
         iv_jifen = (ImageView) view.findViewById(R.id.iv_jifen);
         iv_duihuan = (ImageView) view.findViewById(R.id.iv_duihuan);
         iv_zhenwei = (ImageView) view.findViewById(R.id.iv_zhenwei);
-        iv_meiri.setOnClickListener(this);
-        iv_jifen.setOnClickListener(this);
-        iv_duihuan.setOnClickListener(this);
-        iv_zhenwei.setOnClickListener(this);
+        r11.setOnClickListener(this);
+        r22.setOnClickListener(this);
+        r33.setOnClickListener(this);
+        r44.setOnClickListener(this);
+        recyclerview = (RecyclerView) view.findViewById(R.id.recyclerview);
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.r1:
                 intentWV("http://h.yunifang.com/sign/sign.html?login_check=2");
                 break;
@@ -145,24 +179,38 @@ public class FragmentHome extends Fragment implements View.OnClickListener, YuNi
                 break;
         }
     }
-    public void intentWV(String url){
-        Intent intent=new Intent(getActivity(), WebViewActivity.class);
-        intent.putExtra("url",url);
+
+    public void intentWV(String url) {
+        Intent intent = new Intent(getActivity(), WebViewActivity.class);
+        intent.putExtra("url", url);
         startActivity(intent);
     }
 
     @Override
     public void ynfdataSuccer(HomeBean mt) {
-        //轮播图的集合
-        List<HomeBean.Ad1> ad1 = mt.data.ad1;
-        for (int i = 0; i <ad1.size() ; i++) {
-            list_lunbo_image.add(ad1.get(i).image);
-        }
-        //活动图的集合
-        List<HomeBean.ActivityInfo.ActivityInfoList> activityInfoList = mt.data.activityInfo.activityInfoList;
-        for (int i = 0; i <activityInfoList.size() ; i++) {
-            list_huodong.add(activityInfoList.get(i).activityImg);
-        }
-        initBanner();
+        //轮播图
+        Mes1(mt);
+        Mes2(mt);
+        Mes3(mt);
+    }
+
+    private void Mes1(HomeBean hb) {
+        Message obtain = Message.obtain();
+        obtain.what = 0;
+        obtain.obj = hb;
+        handler.sendMessage(obtain);
+    }
+
+    private void Mes2(HomeBean hb) {
+        Message obtain = Message.obtain();
+        obtain.what = 1;
+        obtain.obj = hb;
+        handler.sendMessage(obtain);
+    }
+    private void Mes3(HomeBean hb) {
+        Message obtain = Message.obtain();
+        obtain.what = 2;
+        obtain.obj = hb;
+        handler.sendMessage(obtain);
     }
 }
