@@ -10,7 +10,7 @@
     android:background="#f5f5f5"
     >
     <ImageButton
-        android:id="@+id/ib_login_back"
+        android:id="@+id/ib_goods_details_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/bt_back"
@@ -25,8 +25,34 @@
     </RelativeLayout>
     
     <ImageView
-        android:id="@+id/goods_details_iv"
+        android:id="@+id/iv_goods_details"
         android:layout_width="match_parent"
         android:layout_height="180dp"
         />
+
+    <TextView
+        android:id="@+id/tv_goods__details_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-------------------------------------------"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_goods_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="¥ 00.00"
+            android:textColor="#EA2000" />
+
+        <TextView
+            android:id="@+id/tv_goods_old_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:text="¥ 00.00"
+            android:textColor="#848181" />
+    </RelativeLayout>
 </LinearLayout>

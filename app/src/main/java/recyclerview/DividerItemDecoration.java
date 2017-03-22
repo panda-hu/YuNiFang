@@ -13,7 +13,7 @@ import android.view.View;
  * 姓名:胡文帅
  * 时间:2017/3/21
  * 邮箱：
- * 备注：
+ * 备注：分割线的封装
  */
 
 public class DividerItemDecoration extends RecyclerView.ItemDecoration{

@@ -39,9 +39,10 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:screenOrientation="portrait"/>
 
-
-        <activity android:name=".HomeActivity"></activity>
         <activity android:name=".WelcomeActivity"></activity>
+        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".GoodsDetailsActivity"></activity>
+        <activity android:name=".GoodsActivity"></activity>
         <activity android:name=".SettingsActivity"></activity>
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".RegisterActivity"></activity>

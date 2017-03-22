@@ -158,7 +158,7 @@
                 android:text="— 优惠活动 —"
                 android:gravity="center_horizontal"
                 android:background="#f1f1f1"
-                android:id="@+id/textView" />
+                />
 
             <com.youth.banner.Banner
                 android:id="@+id/banner_huodong"
@@ -166,10 +166,20 @@
                 android:layout_height="120dp"
                 />
 
-
-
             <TextView
-                android:id="@+id/all_shangpin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="— 热门专题 —"
+                android:gravity="center_horizontal"
+                android:background="#f1f1f1"
+                />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerview_zhuanti"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:id="@+id/tv_all_shangpin"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
                 android:text="查看所有商品"

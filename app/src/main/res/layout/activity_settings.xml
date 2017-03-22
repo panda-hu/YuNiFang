@@ -31,6 +31,5 @@
         android:layout_height="wrap_content"
         android:text="退出登录"
         android:layout_gravity="center_horizontal"
-        android:background="#ff8888"
         />
 </LinearLayout>

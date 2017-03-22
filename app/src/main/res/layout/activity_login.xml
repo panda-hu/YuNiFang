@@ -40,8 +40,54 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="16">
+        android:layout_weight="16"
+        android:orientation="vertical"
+        >
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint=" 手机号"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+
+            android:layout_marginTop="20dp"
+            android:background="#ffff"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint=" 密码"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:background="#ffff"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="忘记密码?"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            />
+
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="登录"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/libao"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="150dp"
+            />
     </LinearLayout>
     <ImageView
         android:layout_width="match_parent"

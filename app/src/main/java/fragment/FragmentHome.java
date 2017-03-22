@@ -13,8 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bwei.test.GoodsActivity;
 import com.bwei.test.R;
 import com.bwei.test.WebViewActivity;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
@@ -91,6 +93,8 @@ public class FragmentHome extends Fragment implements View.OnClickListener, YuNi
 
         }
     };
+    private RecyclerView recyclerView_zhuanti;
+    private TextView tv_all_shangpin;
 
     @Nullable
     @Override
@@ -153,11 +157,18 @@ public class FragmentHome extends Fragment implements View.OnClickListener, YuNi
         iv_jifen = (ImageView) view.findViewById(R.id.iv_jifen);
         iv_duihuan = (ImageView) view.findViewById(R.id.iv_duihuan);
         iv_zhenwei = (ImageView) view.findViewById(R.id.iv_zhenwei);
+        recyclerview = (RecyclerView) view.findViewById(R.id.recyclerview);
+        recyclerView_zhuanti = (RecyclerView) view.findViewById(R.id.recyclerview_zhuanti);
+        tv_all_shangpin = (TextView) view.findViewById(R.id.tv_all_shangpin);
+        initClick();
+    }
+
+    private void initClick() {
         r11.setOnClickListener(this);
         r22.setOnClickListener(this);
         r33.setOnClickListener(this);
         r44.setOnClickListener(this);
-        recyclerview = (RecyclerView) view.findViewById(R.id.recyclerview);
+        tv_all_shangpin.setOnClickListener(this);
     }
 
     @Override
@@ -176,6 +187,10 @@ public class FragmentHome extends Fragment implements View.OnClickListener, YuNi
                 break;
             case R.id.r4:
                 intentWV("http://www.yunifang.com/a/fangweichaxun/wap_fwcx.html");
+                break;
+            case R.id.tv_all_shangpin:
+                Intent intent=new Intent(getActivity(), GoodsActivity.class);
+                startActivity(intent);
                 break;
         }
     }
