@@ -10,6 +10,5 @@ package interFace;
 public interface OnRecyclerViewItemClickListener {
 
     //接口 抽象方法
-    public void onItemClick(int position);
-    public void onItemLongClick(int position);
+     void onItemClick(int position);
 }

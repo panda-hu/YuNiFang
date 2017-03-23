@@ -46,6 +46,7 @@ public class HomeBean {
     public class BestSellers{
         public List<GoodsList> goodsList;
         public class GoodsList{
+            public String id;
             public String goods_img;
             public String goods_name;
             public String shop_price;
@@ -54,6 +55,7 @@ public class HomeBean {
     }
 
     public class DefaultGoodsList{
+        public String id;
         public String goods_img;
         public String goods_name;
         public String shop_price;
@@ -64,6 +66,7 @@ public class HomeBean {
         public String image;
         public List<GoodsList> goodsList;
         public class GoodsList{
+            public String id;
             public String goods_img;
             public String goods_name;
             public String shop_price;

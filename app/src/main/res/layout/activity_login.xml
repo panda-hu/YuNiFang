@@ -32,7 +32,7 @@
             android:text="注册"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:textColor="#ff0000"
+            android:textColor="#F08080"
             android:layout_marginRight="15dp"
             />
     </RelativeLayout>
@@ -48,10 +48,10 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:hint=" 手机号"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
+            android:layout_marginLeft="60px"
+            android:layout_marginRight="60px"
 
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40px"
             android:background="#ffff"
             />
 
@@ -59,16 +59,16 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:hint=" 密码"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginLeft="60px"
+            android:layout_marginRight="60px"
+            android:layout_marginTop="20px"
             android:background="#ffff"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="忘记密码?"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="60px"
             android:layout_marginTop="5dp"
             />
 
@@ -78,7 +78,9 @@
             android:layout_height="wrap_content"
             android:text="登录"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="50px"
+            android:background="#FFF49D9D"
+            android:textColor="#ffff"
             />
 
         <ImageView
@@ -86,7 +88,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/libao"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="300px"
             />
     </LinearLayout>
     <ImageView

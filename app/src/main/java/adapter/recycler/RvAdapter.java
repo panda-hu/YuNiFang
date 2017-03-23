@@ -15,6 +15,7 @@ import java.util.List;
 
 import bean.HomeBean;
 import holder.RvHolder;
+import interFace.OnRecyclerViewItemClickListener;
 
 /**
  * 姓名:胡文帅
@@ -28,12 +29,16 @@ public class RvAdapter extends RecyclerView.Adapter<RvHolder>{
 
     private final Context context;
     private final List<HomeBean.BestSellers.GoodsList> goodsList;
+    private OnRecyclerViewItemClickListener onItemClickListener;
 
     public RvAdapter(Context context, List<HomeBean.BestSellers.GoodsList> goodsList) {
         this.context=context;
         this.goodsList=goodsList;
     }
 
+    public void setOnItemClickListener(OnRecyclerViewItemClickListener onItemClickListener){
+        this.onItemClickListener=onItemClickListener;
+    }
 
     @Override
     public RvHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -43,13 +48,22 @@ public class RvAdapter extends RecyclerView.Adapter<RvHolder>{
     }
 
     @Override
-    public void onBindViewHolder(RvHolder holder, int position) {
+    public void onBindViewHolder(RvHolder holder, final int position) {
         Glide.with(context).load(goodsList.get(position).goods_img).into(holder.item_goods_image);
         holder.item_goods_info.setText(goodsList.get(position).goods_name);
-        holder.item_goods_price.setText(goodsList.get(position).shop_price);
+        holder.item_goods_price.setText("¥ "+goodsList.get(position).shop_price);
         holder.item_goods_old_price.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
-        holder.item_goods_old_price.setText(goodsList.get(position).market_price);
+        holder.item_goods_old_price.setText("¥ "+goodsList.get(position).market_price);
+        holder.item_goods_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(onItemClickListener!=null){
+                    onItemClickListener.onItemClick(position);
+                }
+            }
+        });
     }
+
 
     @Override
     public int getItemCount() {

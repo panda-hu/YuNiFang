@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.zhy.autolayout.AutoLayoutActivity;
+
 /**
  * 姓名:胡文帅
  * 时间:2017/3/16
@@ -12,7 +14,7 @@ import android.widget.ImageButton;
  * 备注：注册页
  */
 
-public class RegisterActivity extends Activity implements View.OnClickListener{
+public class RegisterActivity extends AutoLayoutActivity implements View.OnClickListener{
 
     private ImageButton ib_register_back;
 

@@ -5,15 +5,32 @@
     android:layout_height="match_parent"
     android:background="#f5f5f5">
 
-
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:text="购物车"
-        android:textSize="20sp"
-        android:gravity="center"
-        android:background="#f8f8f8"
-        />
+        android:background="#f8f8f8">
+        <TextView
+            android:id="@+id/shopping_title"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:text="购物车"
+            android:textSize="20sp"
+            android:gravity="center"
+            />
+        <TextView
+            android:id="@+id/shopping_bianji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:text="编辑"
+            android:textSize="15sp"
+            android:textColor="#F08080"
+            />
+    </RelativeLayout>
+
+
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -24,31 +41,19 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shopping_trolley_empty"
-            android:layout_gravity="center"
+
+        <include
+            android:id="@+id/layout_cart_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/cart_empty"
+            android:visibility="visible"
             />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="430dp"
-            android:text="购物车还是空的哦"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="450dp"
-            android:text="快去逛逛吧～"/>
 
     </FrameLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
         android:orientation="horizontal"
         android:background="#f8f8f8">
         <!-- 全选的布局 -->
@@ -57,12 +62,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
             style="@style/CustomCheckboxTheme"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="全选"
-            android:layout_marginLeft="15dp"/>
+            android:layout_marginLeft="15dp"
+            android:layout_gravity="center"/>
         <Space
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -74,6 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="right"
+            android:layout_gravity="center"
             android:paddingRight="10dp"
             android:textColor="#F63A19"
             android:text="合计:￥0.00"/>
@@ -82,10 +90,13 @@
             android:id="@+id/suan_button"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="1dp"
             android:gravity="center"
+            android:layout_gravity="center"
             android:padding="10dp"
-            android:text="结算"
+            android:text="结算(0)"
+            android:background="#FFF49D9D"
+            android:textColor="#ffff"
             />
     </LinearLayout>
 

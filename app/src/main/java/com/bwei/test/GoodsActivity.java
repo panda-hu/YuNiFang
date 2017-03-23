@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.zhy.autolayout.AutoLayoutActivity;
+
 /**
  * 姓名:胡文帅
  * 时间:2017/3/22
@@ -13,7 +15,7 @@ import android.widget.ImageButton;
  * 备注：
  */
 
-public class GoodsActivity extends AppCompatActivity implements View.OnClickListener{
+public class GoodsActivity extends AutoLayoutActivity implements View.OnClickListener{
 
     private ImageButton ib_goods_back;
 

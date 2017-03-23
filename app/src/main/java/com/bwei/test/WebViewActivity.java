@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.zhy.autolayout.AutoLayoutActivity;
+
 /**
  * 姓名:胡文帅
  * 时间:2017/3/18
@@ -13,7 +15,7 @@ import android.webkit.WebViewClient;
  * 备注：
  */
 
-public class WebViewActivity extends Activity{
+public class WebViewActivity extends AutoLayoutActivity{
 
     private WebView wv;
 

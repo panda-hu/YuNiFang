@@ -7,6 +7,8 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 
+import com.zhy.autolayout.AutoLayoutActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +17,7 @@ import guide.Guide1;
 import guide.Guide2;
 import guide.Guide3;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends AutoLayoutActivity {
 
     private ViewPager vp;
     private List<Fragment> list;

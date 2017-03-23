@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.zhy.autolayout.AutoLayoutActivity;
+
 import utils.PreferenceUtils;
 
 /**
@@ -16,7 +18,7 @@ import utils.PreferenceUtils;
  * 备注：
  */
 
-public class SettingsActivity extends Activity implements View.OnClickListener{
+public class SettingsActivity extends AutoLayoutActivity implements View.OnClickListener{
 
     private ImageButton ib_settings_back;
     private Button bt_out;

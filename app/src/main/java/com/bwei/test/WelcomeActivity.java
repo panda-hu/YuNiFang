@@ -10,6 +10,8 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.zhy.autolayout.AutoLayoutActivity;
+
 /**
  * 姓名:胡文帅
  * 时间:2017/3/16
@@ -17,7 +19,7 @@ import android.widget.TextView;
  * 备注：
  */
 
-public class WelcomeActivity extends Activity{
+public class WelcomeActivity extends AutoLayoutActivity{
 
     Handler handler=new Handler(){
         @Override

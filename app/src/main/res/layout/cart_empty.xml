@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/a1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shopping_trolley_empty"
+        android:layout_centerInParent="true"
+        />
+    <TextView
+        android:id="@+id/a2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@id/a1"
+        android:layout_centerHorizontal="true"
+        android:text="购物车还是空的哦"
+        />
+    <TextView
+        android:id="@+id/a3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@id/a2"
+        android:layout_centerHorizontal="true"
+        android:text="快去逛逛吧～"/>
+
+    <TextView
+        android:id="@+id/guan"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="逛一逛"
+        android:gravity="center"
+        android:background="#FFF49D9D"
+        android:textColor="#ffff"
+        android:layout_below="@id/a3"
+        />
+</RelativeLayout>

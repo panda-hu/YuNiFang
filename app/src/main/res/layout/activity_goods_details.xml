@@ -1,40 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" 
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="46dp"
-    android:background="#f5f5f5"
-    >
-    <ImageButton
-        android:id="@+id/ib_goods_details_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bt_back"
-        style="@style/IbDistanceLeft"
-        />
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="#f5f5f5">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="商品详情"
-        style="@style/TextForm"/>
+        <ImageButton
+            android:id="@+id/ib_goods_details_back"
+            style="@style/IbDistanceLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bt_back" />
+
+        <TextView
+            style="@style/TextForm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商品详情" />
     </RelativeLayout>
-    
+
     <ImageView
         android:id="@+id/iv_goods_details"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        />
+        android:layout_height="480px"
+        android:scaleType="fitXY" />
 
     <TextView
         android:id="@+id/tv_goods__details_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="-------------------------------------------"/>
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="20px"
+        android:layout_marginTop="20px"
+        android:text="-------------------------------------------"
+        android:textSize="20sp" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -43,16 +47,68 @@
             android:id="@+id/tv_goods_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="18px"
             android:text="¥ 00.00"
-            android:textColor="#EA2000" />
+            android:textColor="#EA2000"
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/tv_goods_old_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="70dp"
+            android:layout_marginLeft="150px"
+            android:layout_marginTop="18px"
             android:text="¥ 00.00"
             android:textColor="#848181" />
     </RelativeLayout>
+
+    //占位用
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="92px"
+        android:orientation="horizontal"
+        android:background="#f8f8f8"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20px"
+            android:background="@drawable/public_contact_service_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20px"
+            android:text="客服" />
+
+        <TextView
+            android:layout_width="200px"
+            android:layout_height="match_parent"
+            android:background="#FFF6D379"
+            android:gravity="center"
+            android:text="加入购物车"
+            android:textColor="#ffff"
+            android:layout_gravity="right"
+            android:layout_marginLeft="250px"
+
+            />
+
+        <TextView
+            android:layout_width="200px"
+            android:layout_height="match_parent"
+            android:background="#FFE9929D"
+            android:gravity="center"
+            android:text="立即购买"
+            android:textColor="#ffff"
+
+            />
+    </LinearLayout>
 </LinearLayout>

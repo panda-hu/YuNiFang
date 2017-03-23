@@ -18,6 +18,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.youth.banner.Banner;
+import com.zhy.autolayout.AutoLayoutActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +36,7 @@ import utils.GlideImageLoader;
  * 备注：
  */
 
-public class HomeActivity extends AppCompatActivity{
+public class HomeActivity extends AutoLayoutActivity{
 
     private RadioGroup rg;
     private RadioButton rb_home;

@@ -19,7 +19,7 @@ import interFace.YuNiFangData;
 
 public class NetWorkUtils {
 
-    //xutils请求数据框架
+    //xutils请求数据的简单封装
     public static <T>void getStr(String url, final Class<T> mclass, final YuNiFangData yunifangdata){
         x.http().get(new RequestParams(url), new Callback.CommonCallback<String>() {
             @Override
@@ -47,7 +47,10 @@ public class NetWorkUtils {
         });
     }
 
-    //okhttp请求数据框架
+    //volley请求数据的简单封装
+    public static void getVolleyStr(){
+
+    }
 
 
 

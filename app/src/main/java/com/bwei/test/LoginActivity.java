@@ -16,6 +16,7 @@ import com.tencent.connect.common.Constants;
 import com.tencent.tauth.IUiListener;
 import com.tencent.tauth.Tencent;
 import com.tencent.tauth.UiError;
+import com.zhy.autolayout.AutoLayoutActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,7 +33,7 @@ import utils.PreferenceUtils;
  * 备注：登录页
  */
 
-public class LoginActivity extends Activity implements View.OnClickListener{
+public class LoginActivity extends AutoLayoutActivity implements View.OnClickListener{
 
     private static final String TAG = "MainActivity";
     private static final String APP_ID = "1105602574";//官方获取的APPID
