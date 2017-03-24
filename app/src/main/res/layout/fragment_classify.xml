@@ -12,6 +12,206 @@
         android:layout_height="46dp"
         android:background="@drawable/classify_search"
         />
+    <com.handmark.pulltorefresh.library.PullToRefreshScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/ptr_classify"
+        >
+
+    </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="300px"
+            android:background="#ffffff"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_classify_mianmo"
+                android:layout_width="260px"
+                android:layout_height="250px"
+                android:layout_marginTop="20px"
+                android:layout_marginLeft="20px"
+                android:background="@mipmap/mianmo"
+                />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15px" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50px"
+            android:text="— 按功效 —"
+            android:textSize="15sp"
+            android:background="#ffffff"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="美丽从选对产品开始"
+            android:textSize="10sp"
+            android:textColor="#FFCECECE"
+            android:background="#ffffff"
+            android:gravity="center"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150px"
+            android:orientation="horizontal"
+            android:background="#ffffff">
+
+            <ImageView
+                android:id="@+id/iv_classify_gx1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="100px"
+                android:layout_marginTop="10px"
+                android:layout_marginLeft="10px"
+                android:background="@mipmap/bushui"
+                 />
+            <ImageView
+                android:id="@+id/iv_classify_gx2"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="100px"
+                android:layout_marginTop="10px"
+                android:layout_marginLeft="10px"
+                android:background="@mipmap/shuhuan"
+                />
+            <ImageView
+                android:id="@+id/iv_classify_gx3"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="100px"
+                android:layout_marginTop="10px"
+                android:layout_marginLeft="10px"
+                android:background="@mipmap/kongyou"
+                />
+            <ImageView
+                android:id="@+id/iv_classify_gx4"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="100px"
+                android:layout_marginTop="10px"
+                android:layout_marginLeft="10px"
+                android:background="@mipmap/meibai"
+                />
+            <ImageView
+                android:id="@+id/iv_classify_gx5"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="100px"
+                android:layout_marginTop="10px"
+                android:layout_marginLeft="10px"
+                android:background="@mipmap/jinzhi"
+                />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15px" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50px"
+            android:text="— 肤质 —"
+            android:textSize="15sp"
+            android:background="#ffffff"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="适合自己的才是最好"
+            android:textSize="10sp"
+            android:textColor="#FFCECECE"
+            android:background="#ffffff"
+            android:gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:orientation="vertical"
+                >
+                <ImageView
+                    android:id="@+id/iv_classify_fz2"
+                    android:layout_width="220px"
+                    android:layout_height="110px"
+                    android:background="@mipmap/hunhexing"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15px"/>
+                <ImageView
+                    android:id="@+id/iv_classify_fz4"
+                    android:layout_width="220px"
+                    android:layout_height="110px"
+                    android:background="@mipmap/ganxing"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15px"/>
+                <ImageView
+                    android:id="@+id/iv_classify_fz6"
+                    android:layout_width="220px"
+                    android:layout_height="110px"
+                    android:background="@mipmap/doudou"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15px"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:orientation="vertical"
+                >
+                <ImageView
+                    android:id="@+id/iv_classify_fz1"
+                    android:layout_width="220px"
+                    android:layout_height="110px"
+                    android:background="@mipmap/zhongxing"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15px"/>
+                <ImageView
+                    android:id="@+id/iv_classify_fz3"
+                    android:layout_width="220px"
+                    android:layout_height="110px"
+                    android:background="@mipmap/youxing"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15px"/>
+                <ImageView
+                    android:id="@+id/iv_classify_fz5"
+                    android:layout_width="220px"
+                    android:layout_height="110px"
+                    android:background="@mipmap/mingan"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15px"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/mingxing"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+
+    </LinearLayout>
 
 
 </LinearLayout>

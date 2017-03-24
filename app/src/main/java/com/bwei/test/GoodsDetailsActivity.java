@@ -32,6 +32,7 @@ public class GoodsDetailsActivity extends AutoLayoutActivity implements View.OnC
 
     private ImageButton ib_goods_details_back;
     private ImageView iv_goods_details;
+    private String goods_img;
 
     Handler handler=new Handler(){
         @Override
@@ -43,7 +44,8 @@ public class GoodsDetailsActivity extends AutoLayoutActivity implements View.OnC
             }
         }
     };
-    private String goods_img;
+    private TextView goods_tv_shoppingcart;
+
 
     private void initData(DetailsBean db) {
         goods_img = db.data.goods.goods_img;
@@ -77,17 +79,24 @@ public class GoodsDetailsActivity extends AutoLayoutActivity implements View.OnC
         tv_goods__details_name = (TextView) findViewById(R.id.tv_goods__details_name);
         tv_goods_price = (TextView) findViewById(R.id.tv_goods_price);
         tv_goods_old_price = (TextView) findViewById(R.id.tv_goods_old_price);
+        goods_tv_shoppingcart = (TextView) findViewById(R.id.goods_tv_shoppingcart);
         initClick();
     }
 
+    //设置点击
     private void initClick() {
         ib_goods_details_back.setOnClickListener(this);
+        goods_tv_shoppingcart.setOnClickListener(this);
     }
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.ib_goods_details_back:
                 finish();
+                break;
+
+            case R.id.goods_tv_shoppingcart:
+
                 break;
         }
     }

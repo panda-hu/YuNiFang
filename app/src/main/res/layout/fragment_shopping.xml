@@ -58,7 +58,7 @@
         android:background="#f8f8f8">
         <!-- 全选的布局 -->
         <CheckBox
-            android:id="@+id/bt_all"
+            android:id="@+id/cb_all"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"

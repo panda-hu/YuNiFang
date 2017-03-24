@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="180px"
+    android:weightSum="1"
+    android:background="#ffff">
+
+
+    <CheckBox
+        android:id="@+id/cb_check"
+        android:layout_width="60px"
+        android:layout_height="60px"
+        android:layout_marginLeft="20px"
+        android:gravity="center"
+        android:layout_gravity="center_vertical"
+        style="@style/CustomCheckboxTheme"
+        />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="130px"
+        android:layout_height="130px"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="10px"
+
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="180px"
+        android:orientation="vertical"
+        android:layout_marginLeft="20px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="111111"
+            android:layout_marginTop="40px"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#F63A19"
+                android:layout_gravity="center_vertical"
+                android:text="￥0.00"
+                android:id="@+id/textView" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFD4D4D4"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20px"
+                android:text="数量: 6"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
