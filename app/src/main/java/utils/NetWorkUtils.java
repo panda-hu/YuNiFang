@@ -24,7 +24,6 @@ public class NetWorkUtils {
         x.http().get(new RequestParams(url), new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
-                Log.e("re",result);
                 Gson gson=new Gson();
                 T t = gson.fromJson(result, mclass);
                 yunifangdata.ynfdataSuccer(t);

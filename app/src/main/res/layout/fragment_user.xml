@@ -62,4 +62,13 @@
         android:layout_height="60dp"
         android:background="@drawable/user_tiaofu"
         />
+
+    <ImageView
+        android:id="@+id/iv_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/user"
+        />
+
+
 </LinearLayout>

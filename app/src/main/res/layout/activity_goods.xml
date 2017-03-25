@@ -19,14 +19,14 @@
         />
 
     <TextView
-        android:id="@+id/tv_goods"
+        android:id="@+id/tv_goods_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
         style="@style/TextForm"/>
     </RelativeLayout>
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerview_goods"
+        android:id="@+id/recyclerview_gv_goods"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
