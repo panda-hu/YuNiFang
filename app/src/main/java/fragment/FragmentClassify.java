@@ -227,27 +227,27 @@ public class FragmentClassify extends Fragment implements View.OnClickListener ,
                 break;
 
             case R.id.iv_classify_fz1:
-                initIntent("","按肤质","3");
+                initIntent("14","按肤质","3");
                 break;
 
             case R.id.iv_classify_fz2:
-                initIntent("","按肤质","3");
+                initIntent("13","按肤质","3");
                 break;
 
             case R.id.iv_classify_fz3:
-                initIntent("","按肤质","3");
+                initIntent("29","按肤质","3");
                 break;
 
             case R.id.iv_classify_fz4:
-                initIntent("","按肤质","3");
+                initIntent("28","按肤质","3");
                 break;
 
             case R.id.iv_classify_fz5:
-                initIntent("","按肤质","3");
+                initIntent("15","按肤质","3");
                 break;
 
             case R.id.iv_classify_fz6:
-                initIntent("","按肤质","3");
+                initIntent("37","按肤质","3");
                 break;
 
         }

@@ -26,6 +26,10 @@ public class MyUrl {
 
     //详情
     public static String url_xiangqing="http://m.yunifang.com/yunifang/mobile/goods/detail?random=42187&encode=168d21c6d627072293fbbb0a44cc72e9&id=";
+
+
+
+
     //补水保湿
     public static String url_bushui="http://m.yunifang.com/yunifang/mobile/goods/getall?random=60305&encode=b0358434fda8d7478bfc325b5828b721&category_id=17";
     //美白提亮
